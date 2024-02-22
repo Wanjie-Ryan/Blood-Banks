@@ -1,6 +1,6 @@
 ﻿namespace Blood_Banks
 {
-    partial class Form1
+    partial class HomeForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,13 +30,15 @@
         {
             SuspendLayout();
             // 
-            // Form1
+            // HomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1260, 450);
-            Name = "Form1";
-            Text = "Form1";
+            BackColor = SystemColors.ScrollBar;
+            ClientSize = new Size(1182, 753);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "HomeForm";
+            Text = "Home";
             ResumeLayout(false);
         }
 
