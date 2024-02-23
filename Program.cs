@@ -1,3 +1,9 @@
+using System;
+using System.Configuration;
+using MySql.Data.MySqlClient;
+
+
+
 namespace Blood_Banks
 {
     internal static class Program
@@ -12,6 +18,29 @@ namespace Blood_Banks
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new HomeForm());
+
+            string connectionString = ConfigurationManager.ConnectionStrings["connectionstring"].ConnectionString;
+
+            try
+            {
+                // Create a MySqlConnection object
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    // Open the connection
+                    connection.Open();
+
+                    // If no exception is thrown, the connection is successful
+                    Console.WriteLine("Connection successful!");
+                }
+            }
+            catch (Exception ex)
+            {
+                // If an exception occurs, print the error message
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
+            // Wait for user input before closing the console window
+            Console.ReadLine();
         }
     }
 }
