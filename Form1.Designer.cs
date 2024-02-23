@@ -61,22 +61,17 @@
             lblBPosDonor = new Label();
             lblBPosCount = new Label();
             lblBPos = new Label();
-            panel5 = new Panel();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            panel6 = new Panel();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            panel7 = new Panel();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            panel8 = new Panel();
-            label22 = new Label();
-            label23 = new Label();
-            label24 = new Label();
+            panelABNeg = new Panel();
+            lblABNegDonor = new Label();
+            lblABNegCount = new Label();
+            lblABNeg = new Label();
+            panelABpos = new Panel();
+            lblABposDonor = new Label();
+            lblABposCount = new Label();
+            lblABpos = new Label();
+            lblSearch = new Label();
+            txtSearch = new TextBox();
+            dgvDonors = new DataGridView();
             menuStripTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
@@ -87,10 +82,9 @@
             panelApos.SuspendLayout();
             panelBNeg.SuspendLayout();
             panelBPos.SuspendLayout();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
-            panel7.SuspendLayout();
-            panel8.SuspendLayout();
+            panelABNeg.SuspendLayout();
+            panelABpos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvDonors).BeginInit();
             SuspendLayout();
             // 
             // menuStripTop
@@ -145,7 +139,7 @@
             panelBottom.Controls.Add(lblFooterTitle);
             panelBottom.Controls.Add(lbldesigned);
             panelBottom.Dock = DockStyle.Bottom;
-            panelBottom.Location = new Point(0, 731);
+            panelBottom.Location = new Point(0, 611);
             panelBottom.Name = "panelBottom";
             panelBottom.Size = new Size(1103, 69);
             panelBottom.TabIndex = 3;
@@ -434,192 +428,133 @@
             lblBPos.TabIndex = 5;
             lblBPos.Text = "B+";
             // 
-            // panel5
+            // panelABNeg
             // 
-            panel5.BackColor = SystemColors.Control;
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(label15);
-            panel5.Location = new Point(234, 455);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(200, 100);
-            panel5.TabIndex = 10;
+            panelABNeg.BackColor = SystemColors.Control;
+            panelABNeg.Controls.Add(lblABNegDonor);
+            panelABNeg.Controls.Add(lblABNegCount);
+            panelABNeg.Controls.Add(lblABNeg);
+            panelABNeg.Location = new Point(234, 455);
+            panelABNeg.Name = "panelABNeg";
+            panelABNeg.Size = new Size(200, 100);
+            panelABNeg.TabIndex = 10;
             // 
-            // label13
+            // lblABNegDonor
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.FromArgb(226, 76, 58);
-            label13.Location = new Point(98, 64);
-            label13.Name = "label13";
-            label13.Size = new Size(87, 27);
-            label13.TabIndex = 5;
-            label13.Text = "Donors";
+            lblABNegDonor.AutoSize = true;
+            lblABNegDonor.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblABNegDonor.ForeColor = Color.FromArgb(226, 76, 58);
+            lblABNegDonor.Location = new Point(98, 64);
+            lblABNegDonor.Name = "lblABNegDonor";
+            lblABNegDonor.Size = new Size(87, 27);
+            lblABNegDonor.TabIndex = 5;
+            lblABNegDonor.Text = "Donors";
             // 
-            // label14
+            // lblABNegCount
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Harrington", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.FromArgb(226, 76, 58);
-            label14.Location = new Point(115, 12);
-            label14.Name = "label14";
-            label14.Size = new Size(56, 32);
-            label14.TabIndex = 5;
-            label14.Text = "100";
+            lblABNegCount.AutoSize = true;
+            lblABNegCount.Font = new Font("Harrington", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblABNegCount.ForeColor = Color.FromArgb(226, 76, 58);
+            lblABNegCount.Location = new Point(115, 12);
+            lblABNegCount.Name = "lblABNegCount";
+            lblABNegCount.Size = new Size(56, 32);
+            lblABNegCount.TabIndex = 5;
+            lblABNegCount.Text = "100";
             // 
-            // label15
+            // lblABNeg
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Harrington", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.FromArgb(226, 76, 58);
-            label15.Location = new Point(16, 33);
-            label15.Name = "label15";
-            label15.Size = new Size(59, 44);
-            label15.TabIndex = 5;
-            label15.Text = "O-";
+            lblABNeg.AutoSize = true;
+            lblABNeg.Font = new Font("Harrington", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblABNeg.ForeColor = Color.FromArgb(226, 76, 58);
+            lblABNeg.Location = new Point(16, 33);
+            lblABNeg.Name = "lblABNeg";
+            lblABNeg.Size = new Size(89, 44);
+            lblABNeg.TabIndex = 5;
+            lblABNeg.Text = "AB-";
             // 
-            // panel6
+            // panelABpos
             // 
-            panel6.BackColor = SystemColors.Control;
-            panel6.Controls.Add(label16);
-            panel6.Controls.Add(label17);
-            panel6.Controls.Add(label18);
-            panel6.Location = new Point(12, 455);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(200, 100);
-            panel6.TabIndex = 9;
+            panelABpos.BackColor = SystemColors.Control;
+            panelABpos.Controls.Add(lblABposDonor);
+            panelABpos.Controls.Add(lblABposCount);
+            panelABpos.Controls.Add(lblABpos);
+            panelABpos.Location = new Point(12, 455);
+            panelABpos.Name = "panelABpos";
+            panelABpos.Size = new Size(200, 100);
+            panelABpos.TabIndex = 9;
             // 
-            // label16
+            // lblABposDonor
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.FromArgb(226, 76, 58);
-            label16.Location = new Point(98, 64);
-            label16.Name = "label16";
-            label16.Size = new Size(87, 27);
-            label16.TabIndex = 5;
-            label16.Text = "Donors";
+            lblABposDonor.AutoSize = true;
+            lblABposDonor.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblABposDonor.ForeColor = Color.FromArgb(226, 76, 58);
+            lblABposDonor.Location = new Point(98, 64);
+            lblABposDonor.Name = "lblABposDonor";
+            lblABposDonor.Size = new Size(87, 27);
+            lblABposDonor.TabIndex = 5;
+            lblABposDonor.Text = "Donors";
             // 
-            // label17
+            // lblABposCount
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Harrington", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.FromArgb(226, 76, 58);
-            label17.Location = new Point(115, 12);
-            label17.Name = "label17";
-            label17.Size = new Size(56, 32);
-            label17.TabIndex = 5;
-            label17.Text = "100";
+            lblABposCount.AutoSize = true;
+            lblABposCount.Font = new Font("Harrington", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblABposCount.ForeColor = Color.FromArgb(226, 76, 58);
+            lblABposCount.Location = new Point(115, 12);
+            lblABposCount.Name = "lblABposCount";
+            lblABposCount.Size = new Size(56, 32);
+            lblABposCount.TabIndex = 5;
+            lblABposCount.Text = "100";
             // 
-            // label18
+            // lblABpos
             // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Harrington", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.FromArgb(226, 76, 58);
-            label18.Location = new Point(16, 33);
-            label18.Name = "label18";
-            label18.Size = new Size(60, 44);
-            label18.TabIndex = 5;
-            label18.Text = "O+";
+            lblABpos.AutoSize = true;
+            lblABpos.Font = new Font("Harrington", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblABpos.ForeColor = Color.FromArgb(226, 76, 58);
+            lblABpos.Location = new Point(16, 33);
+            lblABpos.Name = "lblABpos";
+            lblABpos.Size = new Size(90, 44);
+            lblABpos.TabIndex = 5;
+            lblABpos.Text = "AB+";
             // 
-            // panel7
+            // lblSearch
             // 
-            panel7.BackColor = SystemColors.Control;
-            panel7.Controls.Add(label19);
-            panel7.Controls.Add(label20);
-            panel7.Controls.Add(label21);
-            panel7.Location = new Point(234, 580);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(200, 100);
-            panel7.TabIndex = 12;
+            lblSearch.AutoSize = true;
+            lblSearch.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblSearch.Location = new Point(599, 122);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(150, 27);
+            lblSearch.TabIndex = 11;
+            lblSearch.Text = "Search Donor";
             // 
-            // label19
+            // txtSearch
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label19.ForeColor = Color.FromArgb(226, 76, 58);
-            label19.Location = new Point(98, 64);
-            label19.Name = "label19";
-            label19.Size = new Size(87, 27);
-            label19.TabIndex = 5;
-            label19.Text = "Donors";
+            txtSearch.BorderStyle = BorderStyle.None;
+            txtSearch.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            txtSearch.Location = new Point(755, 122);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(298, 28);
+            txtSearch.TabIndex = 12;
             // 
-            // label20
+            // dgvDonors
             // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Harrington", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label20.ForeColor = Color.FromArgb(226, 76, 58);
-            label20.Location = new Point(115, 12);
-            label20.Name = "label20";
-            label20.Size = new Size(56, 32);
-            label20.TabIndex = 5;
-            label20.Text = "100";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Harrington", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label21.ForeColor = Color.FromArgb(226, 76, 58);
-            label21.Location = new Point(16, 33);
-            label21.Name = "label21";
-            label21.Size = new Size(59, 44);
-            label21.TabIndex = 5;
-            label21.Text = "O-";
-            // 
-            // panel8
-            // 
-            panel8.BackColor = SystemColors.Control;
-            panel8.Controls.Add(label22);
-            panel8.Controls.Add(label23);
-            panel8.Controls.Add(label24);
-            panel8.Location = new Point(12, 580);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(200, 100);
-            panel8.TabIndex = 11;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label22.ForeColor = Color.FromArgb(226, 76, 58);
-            label22.Location = new Point(98, 64);
-            label22.Name = "label22";
-            label22.Size = new Size(87, 27);
-            label22.TabIndex = 5;
-            label22.Text = "Donors";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Harrington", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label23.ForeColor = Color.FromArgb(226, 76, 58);
-            label23.Location = new Point(115, 12);
-            label23.Name = "label23";
-            label23.Size = new Size(56, 32);
-            label23.TabIndex = 5;
-            label23.Text = "100";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Harrington", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label24.ForeColor = Color.FromArgb(226, 76, 58);
-            label24.Location = new Point(16, 33);
-            label24.Name = "label24";
-            label24.Size = new Size(60, 44);
-            label24.TabIndex = 5;
-            label24.Text = "O+";
+            dgvDonors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDonors.Location = new Point(599, 168);
+            dgvDonors.Name = "dgvDonors";
+            dgvDonors.RowHeadersWidth = 51;
+            dgvDonors.Size = new Size(454, 387);
+            dgvDonors.TabIndex = 13;
             // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(1103, 800);
-            Controls.Add(panel7);
-            Controls.Add(panel8);
-            Controls.Add(panel5);
-            Controls.Add(panel6);
+            ClientSize = new Size(1103, 680);
+            Controls.Add(dgvDonors);
+            Controls.Add(txtSearch);
+            Controls.Add(lblSearch);
+            Controls.Add(panelABNeg);
+            Controls.Add(panelABpos);
             Controls.Add(panelBNeg);
             Controls.Add(panelBPos);
             Controls.Add(panelANeg);
@@ -655,14 +590,11 @@
             panelBNeg.PerformLayout();
             panelBPos.ResumeLayout(false);
             panelBPos.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
+            panelABNeg.ResumeLayout(false);
+            panelABNeg.PerformLayout();
+            panelABpos.ResumeLayout(false);
+            panelABpos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvDonors).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -701,21 +633,16 @@
         private Label lblBPosDonor;
         private Label lblBPosCount;
         private Label lblBPos;
-        private Panel panel5;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Panel panel6;
-        private Label label16;
-        private Label label17;
-        private Label label18;
-        private Panel panel7;
-        private Label label19;
-        private Label label20;
-        private Label label21;
-        private Panel panel8;
-        private Label label22;
-        private Label label23;
-        private Label label24;
+        private Panel panelABNeg;
+        private Label lblABNegDonor;
+        private Label lblABNegCount;
+        private Label lblABNeg;
+        private Panel panelABpos;
+        private Label lblABposDonor;
+        private Label lblABposCount;
+        private Label lblABpos;
+        private Label lblSearch;
+        private TextBox txtSearch;
+        private DataGridView dgvDonors;
     }
 }
