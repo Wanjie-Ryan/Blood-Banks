@@ -16,5 +16,10 @@ namespace Blood_Banks.UI
         {
             InitializeComponent();
         }
+
+        private void pbusersClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

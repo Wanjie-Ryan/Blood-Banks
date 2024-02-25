@@ -25,11 +25,6 @@ namespace Blood_Banks
             //user.Show();
         }
 
-        private void usersNav_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void usersNav_Click_1(object sender, EventArgs e)
         {
             users userform = new users();
