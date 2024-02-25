@@ -38,9 +38,9 @@
             lblFooterTitle = new Label();
             lbldesigned = new Label();
             panelOPos = new Panel();
-            lblOpos = new Label();
-            lblOPosCount = new Label();
             lblOposDonor = new Label();
+            lblOPosCount = new Label();
+            lblOpos = new Label();
             panelONeg = new Panel();
             lblONegDonor = new Label();
             lblOnegCount = new Label();
@@ -105,6 +105,7 @@
             usersNav.Name = "usersNav";
             usersNav.Size = new Size(88, 31);
             usersNav.Text = "Users";
+            usersNav.Click += this.usersNav_Click;
             // 
             // donorsNav
             // 
@@ -175,16 +176,16 @@
             panelOPos.Size = new Size(200, 100);
             panelOPos.TabIndex = 4;
             // 
-            // lblOpos
+            // lblOposDonor
             // 
-            lblOpos.AutoSize = true;
-            lblOpos.Font = new Font("Harrington", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblOpos.ForeColor = Color.FromArgb(226, 76, 58);
-            lblOpos.Location = new Point(16, 33);
-            lblOpos.Name = "lblOpos";
-            lblOpos.Size = new Size(60, 44);
-            lblOpos.TabIndex = 5;
-            lblOpos.Text = "O+";
+            lblOposDonor.AutoSize = true;
+            lblOposDonor.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblOposDonor.ForeColor = Color.FromArgb(226, 76, 58);
+            lblOposDonor.Location = new Point(98, 64);
+            lblOposDonor.Name = "lblOposDonor";
+            lblOposDonor.Size = new Size(87, 27);
+            lblOposDonor.TabIndex = 5;
+            lblOposDonor.Text = "Donors";
             // 
             // lblOPosCount
             // 
@@ -197,16 +198,16 @@
             lblOPosCount.TabIndex = 5;
             lblOPosCount.Text = "100";
             // 
-            // lblOposDonor
+            // lblOpos
             // 
-            lblOposDonor.AutoSize = true;
-            lblOposDonor.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblOposDonor.ForeColor = Color.FromArgb(226, 76, 58);
-            lblOposDonor.Location = new Point(98, 64);
-            lblOposDonor.Name = "lblOposDonor";
-            lblOposDonor.Size = new Size(87, 27);
-            lblOposDonor.TabIndex = 5;
-            lblOposDonor.Text = "Donors";
+            lblOpos.AutoSize = true;
+            lblOpos.Font = new Font("Harrington", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblOpos.ForeColor = Color.FromArgb(226, 76, 58);
+            lblOpos.Location = new Point(16, 33);
+            lblOpos.Name = "lblOpos";
+            lblOpos.Size = new Size(60, 44);
+            lblOpos.TabIndex = 5;
+            lblOpos.Text = "O+";
             // 
             // panelONeg
             // 
