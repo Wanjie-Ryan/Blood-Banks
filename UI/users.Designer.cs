@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(users));
             panelTop = new Panel();
             lblusersForm = new Label();
             lblProfPic = new Label();
@@ -54,14 +55,17 @@
             btnClear = new Button();
             btnDelete = new Button();
             btnupdate = new Button();
+            pbusersClose = new PictureBox();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbusersClose).BeginInit();
             SuspendLayout();
             // 
             // panelTop
             // 
             panelTop.BackColor = SystemColors.Control;
+            panelTop.Controls.Add(pbusersClose);
             panelTop.Controls.Add(lblusersForm);
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(0, 0);
@@ -314,6 +318,18 @@
             btnupdate.Text = "Update";
             btnupdate.UseVisualStyleBackColor = true;
             // 
+            // pbusersClose
+            // 
+            pbusersClose.Cursor = Cursors.Hand;
+            pbusersClose.Image = (Image)resources.GetObject("pbusersClose.Image");
+            pbusersClose.Location = new Point(1153, 31);
+            pbusersClose.Name = "pbusersClose";
+            pbusersClose.Size = new Size(35, 35);
+            pbusersClose.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbusersClose.TabIndex = 1;
+            pbusersClose.TabStop = false;
+            pbusersClose.Click += pbusersClose_Click;
+            // 
             // users
             // 
             AutoScaleDimensions = new SizeF(13F, 27F);
@@ -356,6 +372,7 @@
             panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbusersClose).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -388,5 +405,6 @@
         private Button btnClear;
         private Button btnDelete;
         private Button btnupdate;
+        private PictureBox pbusersClose;
     }
 }

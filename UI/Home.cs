@@ -1,3 +1,5 @@
+using Blood_Banks.UI;
+
 namespace Blood_Banks
 {
     public partial class HomeForm : Form
@@ -21,6 +23,17 @@ namespace Blood_Banks
         {
             //Users user = new Users();
             //user.Show();
+        }
+
+        private void usersNav_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usersNav_Click_1(object sender, EventArgs e)
+        {
+            users userform = new users();
+            userform.Show();
         }
     }
 }

@@ -105,7 +105,7 @@
             usersNav.Name = "usersNav";
             usersNav.Size = new Size(88, 31);
             usersNav.Text = "Users";
-            //usersNav.Click += this.usersNav_Click;
+            usersNav.Click += usersNav_Click_1;
             // 
             // donorsNav
             // 
