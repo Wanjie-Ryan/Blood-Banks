@@ -31,7 +31,7 @@
             panelTop = new Panel();
             lblusersForm = new Label();
             lblProfPic = new Label();
-            label2 = new Label();
+            txtSearch = new Label();
             lbladdress = new Label();
             lblContact = new Label();
             lblPwd = new Label();
@@ -42,8 +42,21 @@
             pictureBox1 = new PictureBox();
             btnSI = new Button();
             txtUserID = new TextBox();
+            txtFullname = new TextBox();
+            txtmail = new TextBox();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
+            txtContact = new TextBox();
+            txtAddress = new TextBox();
+            txtUserSearch = new TextBox();
+            dgvUsers = new DataGridView();
+            btnAdd = new Button();
+            btnClear = new Button();
+            btnDelete = new Button();
+            btnupdate = new Button();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             SuspendLayout();
             // 
             // panelTop
@@ -80,23 +93,23 @@
             lblProfPic.TabIndex = 1;
             lblProfPic.Text = "Profile Picture";
             // 
-            // label2
+            // txtSearch
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.Desktop;
-            label2.Location = new Point(676, 142);
-            label2.Name = "label2";
-            label2.Size = new Size(136, 24);
-            label2.TabIndex = 3;
-            label2.Text = "Profile Picture";
+            txtSearch.AutoSize = true;
+            txtSearch.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            txtSearch.ForeColor = SystemColors.Desktop;
+            txtSearch.Location = new Point(676, 142);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(72, 24);
+            txtSearch.TabIndex = 3;
+            txtSearch.Text = "Search";
             // 
             // lbladdress
             // 
             lbladdress.AutoSize = true;
             lbladdress.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lbladdress.ForeColor = SystemColors.Desktop;
-            lbladdress.Location = new Point(12, 505);
+            lbladdress.Location = new Point(20, 606);
             lbladdress.Name = "lbladdress";
             lbladdress.Size = new Size(85, 24);
             lbladdress.TabIndex = 4;
@@ -107,7 +120,7 @@
             lblContact.AutoSize = true;
             lblContact.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblContact.ForeColor = SystemColors.Desktop;
-            lblContact.Location = new Point(20, 450);
+            lblContact.Location = new Point(20, 538);
             lblContact.Name = "lblContact";
             lblContact.Size = new Size(77, 24);
             lblContact.TabIndex = 5;
@@ -118,7 +131,7 @@
             lblPwd.AutoSize = true;
             lblPwd.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblPwd.ForeColor = SystemColors.Desktop;
-            lblPwd.Location = new Point(20, 409);
+            lblPwd.Location = new Point(19, 475);
             lblPwd.Name = "lblPwd";
             lblPwd.Size = new Size(97, 24);
             lblPwd.TabIndex = 6;
@@ -129,7 +142,7 @@
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblUsername.ForeColor = SystemColors.Desktop;
-            lblUsername.Location = new Point(28, 367);
+            lblUsername.Location = new Point(19, 408);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(98, 24);
             lblUsername.TabIndex = 7;
@@ -140,7 +153,7 @@
             lblmail.AutoSize = true;
             lblmail.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblmail.ForeColor = SystemColors.Desktop;
-            lblmail.Location = new Point(38, 343);
+            lblmail.Location = new Point(20, 344);
             lblmail.Name = "lblmail";
             lblmail.Size = new Size(59, 24);
             lblmail.TabIndex = 8;
@@ -151,7 +164,7 @@
             lblFullname.AutoSize = true;
             lblFullname.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblFullname.ForeColor = SystemColors.Desktop;
-            lblFullname.Location = new Point(12, 294);
+            lblFullname.Location = new Point(20, 281);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(97, 24);
             lblFullname.TabIndex = 9;
@@ -197,12 +210,128 @@
             txtUserID.Size = new Size(312, 28);
             txtUserID.TabIndex = 13;
             // 
+            // txtFullname
+            // 
+            txtFullname.Location = new Point(174, 281);
+            txtFullname.Name = "txtFullname";
+            txtFullname.Size = new Size(312, 35);
+            txtFullname.TabIndex = 14;
+            // 
+            // txtmail
+            // 
+            txtmail.Location = new Point(174, 344);
+            txtmail.Name = "txtmail";
+            txtmail.Size = new Size(312, 35);
+            txtmail.TabIndex = 15;
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(174, 408);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(312, 35);
+            txtUsername.TabIndex = 16;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(174, 475);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(312, 35);
+            txtPassword.TabIndex = 17;
+            // 
+            // txtContact
+            // 
+            txtContact.Location = new Point(174, 538);
+            txtContact.Name = "txtContact";
+            txtContact.Size = new Size(312, 35);
+            txtContact.TabIndex = 18;
+            // 
+            // txtAddress
+            // 
+            txtAddress.Location = new Point(174, 606);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(312, 91);
+            txtAddress.TabIndex = 19;
+            // 
+            // txtUserSearch
+            // 
+            txtUserSearch.Cursor = Cursors.Hand;
+            txtUserSearch.Location = new Point(775, 136);
+            txtUserSearch.Name = "txtUserSearch";
+            txtUserSearch.Size = new Size(342, 35);
+            txtUserSearch.TabIndex = 20;
+            // 
+            // dgvUsers
+            // 
+            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsers.Location = new Point(664, 213);
+            dgvUsers.Name = "dgvUsers";
+            dgvUsers.RowHeadersWidth = 51;
+            dgvUsers.Size = new Size(463, 269);
+            dgvUsers.TabIndex = 21;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.ForeColor = SystemColors.Desktop;
+            btnAdd.Location = new Point(533, 544);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(94, 38);
+            btnAdd.TabIndex = 22;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            btnClear.Cursor = Cursors.Hand;
+            btnClear.ForeColor = SystemColors.Desktop;
+            btnClear.Location = new Point(895, 544);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(94, 38);
+            btnClear.TabIndex = 24;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.ForeColor = SystemColors.Desktop;
+            btnDelete.Location = new Point(775, 544);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 38);
+            btnDelete.TabIndex = 25;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnupdate
+            // 
+            btnupdate.Cursor = Cursors.Hand;
+            btnupdate.ForeColor = SystemColors.Desktop;
+            btnupdate.Location = new Point(654, 544);
+            btnupdate.Name = "btnupdate";
+            btnupdate.Size = new Size(94, 38);
+            btnupdate.TabIndex = 26;
+            btnupdate.Text = "Update";
+            btnupdate.UseVisualStyleBackColor = true;
+            // 
             // users
             // 
             AutoScaleDimensions = new SizeF(13F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
             ClientSize = new Size(1200, 700);
+            Controls.Add(btnupdate);
+            Controls.Add(btnDelete);
+            Controls.Add(btnClear);
+            Controls.Add(btnAdd);
+            Controls.Add(dgvUsers);
+            Controls.Add(txtUserSearch);
+            Controls.Add(txtAddress);
+            Controls.Add(txtContact);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
+            Controls.Add(txtmail);
+            Controls.Add(txtFullname);
             Controls.Add(txtUserID);
             Controls.Add(btnSI);
             Controls.Add(pictureBox1);
@@ -213,7 +342,7 @@
             Controls.Add(lblPwd);
             Controls.Add(lblContact);
             Controls.Add(lbladdress);
-            Controls.Add(label2);
+            Controls.Add(txtSearch);
             Controls.Add(lblProfPic);
             Controls.Add(panelTop);
             Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
@@ -226,6 +355,7 @@
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,7 +365,7 @@
         private Panel panelTop;
         private Label lblusersForm;
         private Label lblProfPic;
-        private Label label2;
+        private Label txtSearch;
         private Label lbladdress;
         private Label lblContact;
         private Label lblPwd;
@@ -246,5 +376,17 @@
         private PictureBox pictureBox1;
         private Button btnSI;
         private TextBox txtUserID;
+        private TextBox txtFullname;
+        private TextBox txtmail;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
+        private TextBox txtContact;
+        private TextBox txtAddress;
+        private TextBox txtUserSearch;
+        private DataGridView dgvUsers;
+        private Button btnAdd;
+        private Button btnClear;
+        private Button btnDelete;
+        private Button btnupdate;
     }
 }
