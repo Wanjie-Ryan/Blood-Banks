@@ -28,7 +28,13 @@ namespace Blood_Banks.DAL
 
             try
             {
+                string sql = "SELECT * FROM users";
 
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                //Transfer data from SqlData Adapter to datatable
+                adapter.Fill(dt);
             }
             catch(Exception ex)
             {
