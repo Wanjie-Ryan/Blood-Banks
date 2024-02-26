@@ -153,5 +153,47 @@ namespace Blood_Banks.DAL
 
             return isSuccess;
         }
+
+        // deleting data from the DB
+
+        public bool Delete (userBLL u)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection();
+
+            try
+            {
+                string sql = "DELETE FROM users WHERE user_id = @user_id";
+
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.AddWithValue("user_id", u.user_id);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return isSuccess;
+        }
     }
 }
