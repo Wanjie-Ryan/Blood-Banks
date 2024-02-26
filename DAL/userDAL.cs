@@ -110,7 +110,21 @@ namespace Blood_Banks.DAL
         {
             bool isSuccess = false;
 
+            SqlConnection conn = new SqlConnection();
 
+            try
+            {
+                string sql = "UPDATE users SET username = @username, email = @email, password = @password, full_name = @full_name, contact = @contact, address = @address, added_date = @added_date, image_name = @image_name";
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
 
             return isSuccess;
         }
