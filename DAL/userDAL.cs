@@ -114,7 +114,32 @@ namespace Blood_Banks.DAL
 
             try
             {
-                string sql = "UPDATE users SET username = @username, email = @email, password = @password, full_name = @full_name, contact = @contact, address = @address, added_date = @added_date, image_name = @image_name";
+                string sql = "UPDATE users SET username = @username, email = @email, password = @password, full_name = @full_name, contact = @contact, address = @address, added_date = @added_date, image_name = @image_name WHERE user_id = @user_id";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@username", u.username);
+                cmd.Parameters.AddWithValue("@email", u.email);
+                cmd.Parameters.AddWithValue("@password", u.password);
+                cmd.Parameters.AddWithValue("@full_name", u.full_name);
+                cmd.Parameters.AddWithValue("@contact", u.contact);
+                cmd.Parameters.AddWithValue("@address", u.address);
+                cmd.Parameters.AddWithValue("@added_date", u.added_date);
+                cmd.Parameters.AddWithValue("@image_name", u.image_name);
+                cmd.Parameters.AddWithValue("@user_id", u.user_id);
+
+                conn.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
 
             }
             catch(Exception ex)
