@@ -166,9 +166,9 @@ namespace Blood_Banks.DAL
             {
                 string sql = "DELETE FROM users WHERE user_id = @user_id";
 
-                SqlCommand cmd = new SqlCommand();
+                SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("user_id", u.user_id);
+                cmd.Parameters.AddWithValue("@user_id", u.user_id);
 
                 conn.Open();
 
