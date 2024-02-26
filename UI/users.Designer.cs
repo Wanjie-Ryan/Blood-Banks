@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(users));
             panelTop = new Panel();
+            pbusersClose = new PictureBox();
             lblusersForm = new Label();
             lblProfPic = new Label();
             txtSearch = new Label();
@@ -55,11 +56,10 @@
             btnClear = new Button();
             btnDelete = new Button();
             btnupdate = new Button();
-            pbusersClose = new PictureBox();
             panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbusersClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbusersClose).BeginInit();
             SuspendLayout();
             // 
             // panelTop
@@ -73,6 +73,18 @@
             panelTop.Name = "panelTop";
             panelTop.Size = new Size(1200, 70);
             panelTop.TabIndex = 0;
+            // 
+            // pbusersClose
+            // 
+            pbusersClose.Cursor = Cursors.Hand;
+            pbusersClose.Image = (Image)resources.GetObject("pbusersClose.Image");
+            pbusersClose.Location = new Point(1153, 31);
+            pbusersClose.Name = "pbusersClose";
+            pbusersClose.Size = new Size(35, 35);
+            pbusersClose.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbusersClose.TabIndex = 1;
+            pbusersClose.TabStop = false;
+            pbusersClose.Click += pbusersClose_Click;
             // 
             // lblusersForm
             // 
@@ -284,6 +296,7 @@
             btnAdd.TabIndex = 22;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnClear
             // 
@@ -317,18 +330,6 @@
             btnupdate.TabIndex = 26;
             btnupdate.Text = "Update";
             btnupdate.UseVisualStyleBackColor = true;
-            // 
-            // pbusersClose
-            // 
-            pbusersClose.Cursor = Cursors.Hand;
-            pbusersClose.Image = (Image)resources.GetObject("pbusersClose.Image");
-            pbusersClose.Location = new Point(1153, 31);
-            pbusersClose.Name = "pbusersClose";
-            pbusersClose.Size = new Size(35, 35);
-            pbusersClose.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbusersClose.TabIndex = 1;
-            pbusersClose.TabStop = false;
-            pbusersClose.Click += pbusersClose_Click;
             // 
             // users
             // 
@@ -370,9 +371,9 @@
             Text = "users";
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbusersClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbusersClose).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

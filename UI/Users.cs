@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blood_Banks.BLL;
+using Blood_Banks.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +19,16 @@ namespace Blood_Banks.UI
             InitializeComponent();
         }
 
+        userBLL u = new userBLL();
+        userDAL dal = new userDAL();
         private void pbusersClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
