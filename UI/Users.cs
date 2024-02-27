@@ -28,7 +28,13 @@ namespace Blood_Banks.UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            u.full_name = txtFullname.Text;
+            u.email = txtmail.Text;
+            u.username = txtUsername.Text;
+            u.password = txtPassword.Text;
+            u.contact = txtContact.Text;
+            u.address = txtAddress.Text;
+            u.added_date = DateTime.Now;
         }
     }
 }
