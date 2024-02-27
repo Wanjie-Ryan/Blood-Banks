@@ -1,46 +1,31 @@
 using System;
-using System.Configuration;
-using MySql.Data.MySqlClient;
-
-
+using System.Windows.Forms; // Add this namespace for Application class
 
 namespace Blood_Banks
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        // Define connection string variables
+        private static string server = "localhost";
+        private static string database = "bloodbanks";
+        private static string username = "root";
+        private static string password = "1234567890";
+
+        // Method to get the connection string
+        public static string GetConnectionString()
+        {
+            // Construct and return the connection string
+            return $"server={server};database={database};uid={username};password={password};";
+        }
+
         [STAThread]
         static void Main()
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new HomeForm());
-
-            string connectionString = ConfigurationManager.ConnectionStrings["connectionstring"].ConnectionString;
-
-            try
-            {
-                // Create a MySqlConnection object
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    // Open the connection
-                    connection.Open();
-
-                    // If no exception is thrown, the connection is successful
-                    Console.WriteLine("Connection successful!");
-                }
-            }
-            catch (Exception ex)
-            {
-                // If an exception occurs, print the error message
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-            // Wait for user input before closing the console window
-            Console.ReadLine();
+            // Start the application by running the main form
+            Application.Run(new HomeForm());   
         }
     }
 }

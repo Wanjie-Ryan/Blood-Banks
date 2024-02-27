@@ -251,12 +251,14 @@
             // 
             txtPassword.Location = new Point(174, 475);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(312, 35);
             txtPassword.TabIndex = 17;
             // 
             // txtContact
             // 
             txtContact.Location = new Point(174, 538);
+            txtContact.MaxLength = 10;
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(312, 35);
             txtContact.TabIndex = 18;
