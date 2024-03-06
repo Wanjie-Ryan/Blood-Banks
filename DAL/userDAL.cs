@@ -28,6 +28,10 @@ namespace Blood_Banks.DAL
                 {
                     MessageBox.Show(ex.Message);
                 }
+                finally
+                {
+                    conn.Close();
+                }
             }
 
             return dt;
@@ -71,6 +75,10 @@ namespace Blood_Banks.DAL
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
 
@@ -119,6 +127,10 @@ namespace Blood_Banks.DAL
                 {
                     MessageBox.Show(ex.Message);
                 }
+                finally
+                {
+                    conn.Close();
+                }
             }
 
             return isSuccess;
@@ -154,6 +166,10 @@ namespace Blood_Banks.DAL
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
 
