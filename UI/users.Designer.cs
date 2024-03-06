@@ -281,12 +281,15 @@
             // 
             // dgvUsers
             // 
+            dgvUsers.BackgroundColor = SystemColors.ActiveBorder;
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsers.GridColor = Color.Black;
             dgvUsers.Location = new Point(664, 213);
             dgvUsers.Name = "dgvUsers";
             dgvUsers.RowHeadersWidth = 51;
             dgvUsers.Size = new Size(463, 269);
             dgvUsers.TabIndex = 21;
+            dgvUsers.RowHeaderMouseClick += dgvUsers_RowHeaderMouseClick;
             // 
             // btnAdd
             // 
@@ -310,6 +313,7 @@
             btnClear.TabIndex = 24;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -371,6 +375,7 @@
             Name = "users";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "users";
+            Load += users_Load;
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbusersClose).EndInit();

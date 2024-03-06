@@ -12,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography.X509Certificates;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Blood_Banks.UI
 {
@@ -22,8 +24,8 @@ namespace Blood_Banks.UI
             InitializeComponent();
         }
 
-         userBLL u = new userBLL();
-         userDAL dal = new userDAL();
+        userBLL u = new userBLL();
+        userDAL dal = new userDAL();
         //Program pg = new Program();
         string imageName = "no-image.png";
         private void pbusersClose_Click(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace Blood_Banks.UI
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {                    
+        {
             u.image_name = imageName;
             u.full_name = txtFullname.Text;
             u.email = txtmail.Text;
@@ -49,15 +51,59 @@ namespace Blood_Banks.UI
             {
                 // data or user added successfully
                 MessageBox.Show("User was added successfully", "Insertion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // display the data in the datagridview
+                DataTable dt = dal.Select();
+                dgvUsers.DataSource = dt;
+
+                //clear the textboxes
+                Clear();
             }
             else
             {
                 MessageBox.Show("Failed to add new user", "Insertion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void Clear()
+        {
+            txtFullname.Text = "";
+            txtmail.Text = "";
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtContact.Text = "";
+            txtAddress.Text = "";
+
+        }
+
+        private void dgvUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // find the row index of the row clicked 
+
+            int rowIndex = e.RowIndex;
+            txtUserID.Text = dgvUsers.Rows[rowIndex].Cells[0].Value.ToString();
+            txtUsername.Text = dgvUsers.Rows[rowIndex].Cells[1].Value.ToString();
+            txtmail.Text = dgvUsers.Rows[rowIndex].Cells[2].Value.ToString();
+            txtPassword.Text = dgvUsers.Rows[rowIndex].Cells[3].Value.ToString();
+            txtFullname.Text = dgvUsers.Rows[rowIndex].Cells[4].Value.ToString();
+            txtContact.Text = dgvUsers.Rows[rowIndex].Cells[5].Value.ToString();
+            txtAddress.Text = dgvUsers.Rows[rowIndex].Cells[6].Value.ToString();
+            imageName = dgvUsers.Rows[rowIndex].Cells[7].Value.ToString();
 
 
+        }
 
+        private void users_Load(object sender, EventArgs e)
+        {
+            //load the data when the app is launched
 
+            DataTable dt = dal.Select();
+            dgvUsers.DataSource = dt;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }
