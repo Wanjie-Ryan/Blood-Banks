@@ -123,7 +123,7 @@ namespace Blood_Banks.UI
 
             isSuccess = dal.Update(u);
 
-            if(isSuccess == true)
+            if (isSuccess == true)
             {
                 MessageBox.Show("User has been updated successfully", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -136,6 +136,27 @@ namespace Blood_Banks.UI
             else
             {
                 MessageBox.Show("Failed to update user", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            u.user_id = int.Parse(txtUserID.Text);
+
+            bool isSuccess = dal.Delete(u);
+
+            if(isSuccess == true)
+            {
+                MessageBox.Show("User has been deleted successfully", "Delete Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DataTable dt = dal.Select();
+                dgvUsers.DataSource = dt;
+
+                Clear();
+            }
+            else 
+            {
+                MessageBox.Show("Failed to delete user", "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
