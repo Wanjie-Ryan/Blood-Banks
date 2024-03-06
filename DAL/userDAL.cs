@@ -58,7 +58,15 @@ namespace Blood_Banks.DAL
                     conn.Open();
                     int rows = cmd.ExecuteNonQuery();
 
-                    isSuccess = rows > 0;
+                    //isSuccess = rows > 0;
+                    if (rows > 0)
+                    {
+                        isSuccess = true;
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -97,7 +105,15 @@ namespace Blood_Banks.DAL
                     conn.Open();
                     int rows = cmd.ExecuteNonQuery();
 
-                    isSuccess = rows > 0;
+                   // isSuccess = rows > 0;
+                   if(rows > 0)
+                    {
+                        isSuccess = true;
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -125,7 +141,15 @@ namespace Blood_Banks.DAL
                     conn.Open();
                     int rows = cmd.ExecuteNonQuery();
 
-                    isSuccess = rows > 0;
+                    //isSuccess = rows > 0;
+                    if (rows > 0)
+                    {
+                        isSuccess = true;
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
                 }
                 catch (Exception ex)
                 {
