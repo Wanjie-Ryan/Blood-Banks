@@ -67,6 +67,7 @@ namespace Blood_Banks.UI
 
         public void Clear()
         {
+            txtUserID.Text = "";
             txtFullname.Text = "";
             txtmail.Text = "";
             txtUsername.Text = "";
@@ -104,6 +105,36 @@ namespace Blood_Banks.UI
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            u.user_id = int.Parse(txtUserID.Text);
+            u.username = txtUsername.Text;
+            u.email = txtmail.Text;
+            u.password = txtPassword.Text;
+            u.full_name = txtFullname.Text;
+            u.contact = txtContact.Text;
+            u.address = txtAddress.Text;
+
+            bool isSuccess = false;
+
+            isSuccess = dal.Update(u);
+
+            if(isSuccess == true)
+            {
+                MessageBox.Show("User has been updated successfully", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // load the data on the datagridview
+                DataTable dt = dal.Select();
+                dgvUsers.DataSource = dt;
+
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update user", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

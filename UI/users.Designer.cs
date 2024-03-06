@@ -336,6 +336,7 @@
             btnupdate.TabIndex = 26;
             btnupdate.Text = "Update";
             btnupdate.UseVisualStyleBackColor = true;
+            btnupdate.Click += btnupdate_Click;
             // 
             // users
             // 
