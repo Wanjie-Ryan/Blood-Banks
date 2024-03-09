@@ -280,6 +280,7 @@
             txtUserSearch.Name = "txtUserSearch";
             txtUserSearch.Size = new Size(342, 35);
             txtUserSearch.TabIndex = 20;
+            txtUserSearch.TextChanged += txtUserSearch_TextChanged;
             // 
             // dgvUsers
             // 
