@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Blood_Banks.BLL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,7 +20,11 @@ namespace Blood_Banks.DAL
                 try
                 {
 
-
+                    string sql = "SELECT * FROM donors";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    conn.Open();
+                    adapter.Fill(dt);
                 }
                 catch(Exception ex)
                 {
@@ -32,6 +37,18 @@ namespace Blood_Banks.DAL
             }
 
             return dt;
+        }
+
+        public Boolean Insert(donorsBLL b)
+        {
+            bool isSuccess = false;
+
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            {
+
+            }
+
+                return isSuccess;
         }
     }
 }
