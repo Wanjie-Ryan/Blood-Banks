@@ -197,11 +197,22 @@ namespace Blood_Banks.UI
                 MessageBox.Show(ex.Message);
             }
 
+        }
 
+        private void txtUserSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtUserSearch.Text;
 
-
-
-
+            if(keyword!=null)
+            {
+                DataTable dt = dal.Search(keyword);
+                dgvUsers.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dgvUsers.DataSource = dt;
+            }
         }
     }
 }
