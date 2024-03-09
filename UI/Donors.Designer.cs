@@ -42,11 +42,11 @@
             txtAddress = new TextBox();
             txtEmail = new TextBox();
             txtLastname = new TextBox();
-            txtFullname = new TextBox();
+            txtFirstname = new TextBox();
             btnSI = new Button();
             pbSelectImage = new PictureBox();
             lblUserID = new Label();
-            lblFullname = new Label();
+            lblFirstname = new Label();
             lbllastname = new Label();
             lblmail = new Label();
             lblgender = new Label();
@@ -143,6 +143,7 @@
             btnAdd.TabIndex = 30;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // dgvDonors
             // 
@@ -198,13 +199,13 @@
             txtLastname.Size = new Size(312, 27);
             txtLastname.TabIndex = 46;
             // 
-            // txtFullname
+            // txtFirstname
             // 
-            txtFullname.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtFullname.Location = new Point(180, 276);
-            txtFullname.Name = "txtFullname";
-            txtFullname.Size = new Size(312, 27);
-            txtFullname.TabIndex = 45;
+            txtFirstname.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtFirstname.Location = new Point(180, 276);
+            txtFirstname.Name = "txtFirstname";
+            txtFirstname.Size = new Size(312, 27);
+            txtFirstname.TabIndex = 45;
             // 
             // btnSI
             // 
@@ -237,16 +238,16 @@
             lblUserID.TabIndex = 41;
             lblUserID.Text = "Donor ID";
             // 
-            // lblFullname
+            // lblFirstname
             // 
-            lblFullname.AutoSize = true;
-            lblFullname.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblFullname.ForeColor = SystemColors.Desktop;
-            lblFullname.Location = new Point(26, 276);
-            lblFullname.Name = "lblFullname";
-            lblFullname.Size = new Size(97, 24);
-            lblFullname.TabIndex = 40;
-            lblFullname.Text = "Full Name";
+            lblFirstname.AutoSize = true;
+            lblFirstname.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblFirstname.ForeColor = SystemColors.Desktop;
+            lblFirstname.Location = new Point(26, 276);
+            lblFirstname.Name = "lblFirstname";
+            lblFirstname.Size = new Size(105, 24);
+            lblFirstname.TabIndex = 40;
+            lblFirstname.Text = "First Name";
             // 
             // lbllastname
             // 
@@ -378,11 +379,11 @@
             Controls.Add(txtAddress);
             Controls.Add(txtEmail);
             Controls.Add(txtLastname);
-            Controls.Add(txtFullname);
+            Controls.Add(txtFirstname);
             Controls.Add(btnSI);
             Controls.Add(pbSelectImage);
             Controls.Add(lblUserID);
-            Controls.Add(lblFullname);
+            Controls.Add(lblFirstname);
             Controls.Add(lbllastname);
             Controls.Add(lblmail);
             Controls.Add(lblgender);
@@ -426,11 +427,11 @@
         private TextBox txtPassword;
         private TextBox txtEmail;
         private TextBox txtLastname;
-        private TextBox txtFullname;
+        private TextBox txtFirstname;
         private Button btnSI;
         private PictureBox pbSelectImage;
         private Label lblUserID;
-        private Label lblFullname;
+        private Label lblFirstname;
         private Label lbllastname;
         private Label lblmail;
         private Label lblgender;
