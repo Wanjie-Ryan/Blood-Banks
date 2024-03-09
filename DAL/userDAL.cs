@@ -175,5 +175,34 @@ namespace Blood_Banks.DAL
 
             return isSuccess;
         }
+
+        public DataTable Search(string keyword)
+        {
+            DataTable dt = new DataTable();
+
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            {
+                try
+                {
+                    string sql = "SELECT * FROM users WHERE username LIKE '%" +keyword+ "%' OR full_name LIKE '%" +keyword+ "%' OR email LIKE '%" +keyword+ "%' ";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    conn.Open();
+
+                    adapter.Fill(dt);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+
+            return dt;
+        }
     }
 }
