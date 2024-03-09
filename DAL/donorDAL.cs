@@ -137,5 +137,44 @@ namespace Blood_Banks.DAL
 
             return isSuccess;
         }
+
+        public bool Delete(donorsBLL b)
+        {
+            bool isSuccess = false;
+
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            {
+                try
+                {
+                    string sql = "DELETE FROM donors WHERE donor_id = @donor_id";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("@donor_id", b.donor_id);
+
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                    {
+                        isSuccess = true;
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+                return isSuccess;
+        }
     }
 }
