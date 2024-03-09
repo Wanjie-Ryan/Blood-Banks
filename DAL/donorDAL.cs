@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -175,6 +176,34 @@ namespace Blood_Banks.DAL
             }
 
                 return isSuccess;
+        }
+
+        public DataTable Search(string keyword)
+        {
+            DataTable dt = new DataTable();
+
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            {
+                try
+                {
+                    string sql = "SELECT * FROM donors WHERE first_name LIKE '%" +keyword+ "%' OR last_name LIKE '%" +keyword+ "%' OR email LIKE '%" +keyword+ "%' OR gender LIKE '%" +keyword+"%' OR blood_group LIKE '%" +keyword+ "%'  ";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    conn.Open();
+
+                    adapter.Fill(dt);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            return dt;
         }
     }
 }
