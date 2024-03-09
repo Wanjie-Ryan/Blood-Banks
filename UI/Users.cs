@@ -145,7 +145,7 @@ namespace Blood_Banks.UI
 
             bool isSuccess = dal.Delete(u);
 
-            if(isSuccess == true)
+            if (isSuccess == true)
             {
                 MessageBox.Show("User has been deleted successfully", "Delete Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -154,10 +154,54 @@ namespace Blood_Banks.UI
 
                 Clear();
             }
-            else 
+            else
             {
                 MessageBox.Show("Failed to delete user", "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnSI_Click(object sender, EventArgs e)
+        {
+            // code to upload image of user
+
+            // open the dialog box to select image
+            OpenFileDialog open = new OpenFileDialog();
+
+            // filter the file type to allow image file types
+
+            //open.Filter = "Image files (*.jpg, *.jpeg, *png, *.PNG *.gif) | *.jpg, *.jpeg, *png, *.PNG *.gif";
+            //open.Filter = "*";
+
+            // check if image is selected or not
+
+            try
+            {
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    // check if the file exists
+                    Console.WriteLine("hey");
+                    if (open.CheckFileExists)
+                    {
+                        // display the selected file on picture box
+                        pbSelectImage.Image = new Bitmap(open.FileName);
+                        imageName = open.SafeFileName;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+
+
+
         }
     }
 }

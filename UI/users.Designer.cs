@@ -41,7 +41,7 @@
             lblmail = new Label();
             lblFullname = new Label();
             lblUserID = new Label();
-            pictureBox1 = new PictureBox();
+            pbSelectImage = new PictureBox();
             btnSI = new Button();
             txtUserID = new TextBox();
             txtFullname = new TextBox();
@@ -58,7 +58,7 @@
             btnupdate = new Button();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbusersClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSelectImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             SuspendLayout();
             // 
@@ -197,13 +197,14 @@
             lblUserID.TabIndex = 10;
             lblUserID.Text = "User ID";
             // 
-            // pictureBox1
+            // pbSelectImage
             // 
-            pictureBox1.Location = new Point(177, 103);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(122, 82);
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
+            pbSelectImage.Location = new Point(177, 103);
+            pbSelectImage.Name = "pbSelectImage";
+            pbSelectImage.Size = new Size(122, 82);
+            pbSelectImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbSelectImage.TabIndex = 11;
+            pbSelectImage.TabStop = false;
             // 
             // btnSI
             // 
@@ -215,6 +216,7 @@
             btnSI.TabIndex = 12;
             btnSI.Text = "Select image";
             btnSI.UseVisualStyleBackColor = true;
+            btnSI.Click += btnSI_Click;
             // 
             // txtUserID
             // 
@@ -359,7 +361,7 @@
             Controls.Add(txtFullname);
             Controls.Add(txtUserID);
             Controls.Add(btnSI);
-            Controls.Add(pictureBox1);
+            Controls.Add(pbSelectImage);
             Controls.Add(lblUserID);
             Controls.Add(lblFullname);
             Controls.Add(lblmail);
@@ -381,7 +383,7 @@
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbusersClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSelectImage).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -400,7 +402,7 @@
         private Label lblmail;
         private Label lblFullname;
         private Label lblUserID;
-        private PictureBox pictureBox1;
+        private PictureBox pbSelectImage;
         private Button btnSI;
         private TextBox txtUserID;
         private TextBox txtFullname;
