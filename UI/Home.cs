@@ -30,5 +30,11 @@ namespace Blood_Banks
             users userform = new users();
             userform.Show();
         }
+
+        private void donorsNav_Click(object sender, EventArgs e)
+        {
+            Donors donorsForm = new Donors();
+            donorsForm.Show();
+        }
     }
 }

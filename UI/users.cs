@@ -210,7 +210,7 @@ namespace Blood_Banks.UI
             }
             else
             {
-                DataTable dt = new DataTable();
+                DataTable dt = dal.Select();
                 dgvUsers.DataSource = dt;
             }
         }

@@ -113,6 +113,7 @@
             donorsNav.Name = "donorsNav";
             donorsNav.Size = new Size(107, 31);
             donorsNav.Text = "Donors";
+            donorsNav.Click += donorsNav_Click;
             // 
             // pictureBox1
             // 
