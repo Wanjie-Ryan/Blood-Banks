@@ -36,29 +36,31 @@
             btnDelete = new Button();
             btnClear = new Button();
             btnAdd = new Button();
-            dgvUsers = new DataGridView();
-            txtUserSearch = new TextBox();
+            dgvDonors = new DataGridView();
+            txtDonorSearch = new TextBox();
             txtSearch = new Label();
             txtAddress = new TextBox();
-            txtContact = new TextBox();
-            txtPassword = new TextBox();
-            txtUsername = new TextBox();
-            txtmail = new TextBox();
+            txtEmail = new TextBox();
+            txtLastname = new TextBox();
             txtFullname = new TextBox();
             btnSI = new Button();
             pbSelectImage = new PictureBox();
             lblUserID = new Label();
             lblFullname = new Label();
+            lbllastname = new Label();
             lblmail = new Label();
-            lblUsername = new Label();
-            lblPwd = new Label();
-            lblContact = new Label();
+            lblgender = new Label();
+            lblBloodgroup = new Label();
             lbladdress = new Label();
             lblProfPic = new Label();
             txtUserID = new TextBox();
+            cmbGender = new ComboBox();
+            cmbBloodGroup = new ComboBox();
+            lblDonorContact = new Label();
+            txtDonorContact = new TextBox();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbdonorsClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDonors).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbSelectImage).BeginInit();
             SuspendLayout();
             // 
@@ -142,24 +144,24 @@
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
             // 
-            // dgvUsers
+            // dgvDonors
             // 
-            dgvUsers.BackgroundColor = SystemColors.ActiveBorder;
-            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsers.GridColor = Color.Black;
-            dgvUsers.Location = new Point(603, 214);
-            dgvUsers.Name = "dgvUsers";
-            dgvUsers.RowHeadersWidth = 51;
-            dgvUsers.Size = new Size(463, 269);
-            dgvUsers.TabIndex = 29;
+            dgvDonors.BackgroundColor = SystemColors.ActiveBorder;
+            dgvDonors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDonors.GridColor = Color.Black;
+            dgvDonors.Location = new Point(603, 214);
+            dgvDonors.Name = "dgvDonors";
+            dgvDonors.RowHeadersWidth = 51;
+            dgvDonors.Size = new Size(463, 269);
+            dgvDonors.TabIndex = 29;
             // 
-            // txtUserSearch
+            // txtDonorSearch
             // 
-            txtUserSearch.Cursor = Cursors.Hand;
-            txtUserSearch.Location = new Point(699, 140);
-            txtUserSearch.Name = "txtUserSearch";
-            txtUserSearch.Size = new Size(342, 27);
-            txtUserSearch.TabIndex = 28;
+            txtDonorSearch.Cursor = Cursors.Hand;
+            txtDonorSearch.Location = new Point(699, 140);
+            txtDonorSearch.Name = "txtDonorSearch";
+            txtDonorSearch.Size = new Size(342, 27);
+            txtDonorSearch.TabIndex = 28;
             // 
             // txtSearch
             // 
@@ -174,44 +176,31 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(180, 601);
+            txtAddress.Location = new Point(180, 678);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(312, 91);
             txtAddress.TabIndex = 50;
             // 
-            // txtContact
+            // txtEmail
             // 
-            txtContact.Location = new Point(180, 533);
-            txtContact.MaxLength = 10;
-            txtContact.Name = "txtContact";
-            txtContact.Size = new Size(312, 27);
-            txtContact.TabIndex = 49;
+            txtEmail.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtEmail.Location = new Point(180, 403);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(312, 27);
+            txtEmail.TabIndex = 47;
             // 
-            // txtPassword
+            // txtLastname
             // 
-            txtPassword.Location = new Point(180, 470);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(312, 27);
-            txtPassword.TabIndex = 48;
-            // 
-            // txtUsername
-            // 
-            txtUsername.Location = new Point(180, 403);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(312, 27);
-            txtUsername.TabIndex = 47;
-            // 
-            // txtmail
-            // 
-            txtmail.Location = new Point(180, 339);
-            txtmail.Name = "txtmail";
-            txtmail.Size = new Size(312, 27);
-            txtmail.TabIndex = 46;
+            txtLastname.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtLastname.Location = new Point(180, 339);
+            txtLastname.Name = "txtLastname";
+            txtLastname.Size = new Size(312, 27);
+            txtLastname.TabIndex = 46;
             // 
             // txtFullname
             // 
+            txtFullname.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtFullname.Location = new Point(180, 276);
             txtFullname.Name = "txtFullname";
             txtFullname.Size = new Size(312, 27);
@@ -244,9 +233,9 @@
             lblUserID.ForeColor = SystemColors.Desktop;
             lblUserID.Location = new Point(26, 214);
             lblUserID.Name = "lblUserID";
-            lblUserID.Size = new Size(75, 24);
+            lblUserID.Size = new Size(89, 24);
             lblUserID.TabIndex = 41;
-            lblUserID.Text = "User ID";
+            lblUserID.Text = "Donor ID";
             // 
             // lblFullname
             // 
@@ -259,60 +248,61 @@
             lblFullname.TabIndex = 40;
             lblFullname.Text = "Full Name";
             // 
+            // lbllastname
+            // 
+            lbllastname.AutoSize = true;
+            lbllastname.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbllastname.ForeColor = SystemColors.Desktop;
+            lbllastname.Location = new Point(26, 339);
+            lbllastname.Name = "lbllastname";
+            lbllastname.Size = new Size(103, 24);
+            lbllastname.TabIndex = 39;
+            lbllastname.Text = "Last Name";
+            // 
             // lblmail
             // 
             lblmail.AutoSize = true;
             lblmail.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblmail.ForeColor = SystemColors.Desktop;
-            lblmail.Location = new Point(26, 339);
+            lblmail.Location = new Point(25, 403);
             lblmail.Name = "lblmail";
             lblmail.Size = new Size(59, 24);
-            lblmail.TabIndex = 39;
+            lblmail.TabIndex = 38;
             lblmail.Text = "Email";
             // 
-            // lblUsername
+            // lblgender
             // 
-            lblUsername.AutoSize = true;
-            lblUsername.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblUsername.ForeColor = SystemColors.Desktop;
-            lblUsername.Location = new Point(25, 403);
-            lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(98, 24);
-            lblUsername.TabIndex = 38;
-            lblUsername.Text = "Username";
+            lblgender.AutoSize = true;
+            lblgender.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblgender.ForeColor = SystemColors.Desktop;
+            lblgender.Location = new Point(25, 470);
+            lblgender.Name = "lblgender";
+            lblgender.Size = new Size(74, 24);
+            lblgender.TabIndex = 37;
+            lblgender.Text = "Gender";
             // 
-            // lblPwd
+            // lblBloodgroup
             // 
-            lblPwd.AutoSize = true;
-            lblPwd.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblPwd.ForeColor = SystemColors.Desktop;
-            lblPwd.Location = new Point(25, 470);
-            lblPwd.Name = "lblPwd";
-            lblPwd.Size = new Size(97, 24);
-            lblPwd.TabIndex = 37;
-            lblPwd.Text = "Password";
-            // 
-            // lblContact
-            // 
-            lblContact.AutoSize = true;
-            lblContact.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblContact.ForeColor = SystemColors.Desktop;
-            lblContact.Location = new Point(26, 533);
-            lblContact.Name = "lblContact";
-            lblContact.Size = new Size(77, 24);
-            lblContact.TabIndex = 36;
-            lblContact.Text = "Contact";
+            lblBloodgroup.AutoSize = true;
+            lblBloodgroup.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblBloodgroup.ForeColor = SystemColors.Desktop;
+            lblBloodgroup.Location = new Point(26, 533);
+            lblBloodgroup.Name = "lblBloodgroup";
+            lblBloodgroup.Size = new Size(122, 24);
+            lblBloodgroup.TabIndex = 36;
+            lblBloodgroup.Text = "Blood Group";
             // 
             // lbladdress
             // 
             lbladdress.AutoSize = true;
             lbladdress.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lbladdress.ForeColor = SystemColors.Desktop;
-            lbladdress.Location = new Point(26, 601);
+            lbladdress.Location = new Point(30, 678);
             lbladdress.Name = "lbladdress";
             lbladdress.Size = new Size(85, 24);
             lbladdress.TabIndex = 35;
             lbladdress.Text = "Address";
+            lbladdress.Click += lbladdress_Click;
             // 
             // lblProfPic
             // 
@@ -328,41 +318,83 @@
             // txtUserID
             // 
             txtUserID.Cursor = Cursors.No;
+            txtUserID.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtUserID.Location = new Point(183, 214);
             txtUserID.Name = "txtUserID";
             txtUserID.ReadOnly = true;
             txtUserID.Size = new Size(312, 27);
             txtUserID.TabIndex = 51;
             // 
+            // cmbGender
+            // 
+            cmbGender.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbGender.FormattingEnabled = true;
+            cmbGender.Items.AddRange(new object[] { "Male ", "Female" });
+            cmbGender.Location = new Point(180, 470);
+            cmbGender.Name = "cmbGender";
+            cmbGender.Size = new Size(315, 28);
+            cmbGender.TabIndex = 52;
+            // 
+            // cmbBloodGroup
+            // 
+            cmbBloodGroup.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbBloodGroup.FormattingEnabled = true;
+            cmbBloodGroup.Items.AddRange(new object[] { "O+", "O-", "A+", "A-", "B+", "AB+", "AB-" });
+            cmbBloodGroup.Location = new Point(180, 533);
+            cmbBloodGroup.Name = "cmbBloodGroup";
+            cmbBloodGroup.Size = new Size(315, 28);
+            cmbBloodGroup.TabIndex = 53;
+            // 
+            // lblDonorContact
+            // 
+            lblDonorContact.AutoSize = true;
+            lblDonorContact.Font = new Font("Harrington", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblDonorContact.ForeColor = SystemColors.Desktop;
+            lblDonorContact.Location = new Point(26, 610);
+            lblDonorContact.Name = "lblDonorContact";
+            lblDonorContact.Size = new Size(77, 24);
+            lblDonorContact.TabIndex = 54;
+            lblDonorContact.Text = "Contact";
+            // 
+            // txtDonorContact
+            // 
+            txtDonorContact.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtDonorContact.Location = new Point(183, 610);
+            txtDonorContact.Name = "txtDonorContact";
+            txtDonorContact.Size = new Size(312, 27);
+            txtDonorContact.TabIndex = 55;
+            // 
             // Donors
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(1150, 700);
+            ClientSize = new Size(1150, 800);
+            Controls.Add(txtDonorContact);
+            Controls.Add(lblDonorContact);
+            Controls.Add(cmbBloodGroup);
+            Controls.Add(cmbGender);
             Controls.Add(txtUserID);
             Controls.Add(txtAddress);
-            Controls.Add(txtContact);
-            Controls.Add(txtPassword);
-            Controls.Add(txtUsername);
-            Controls.Add(txtmail);
+            Controls.Add(txtEmail);
+            Controls.Add(txtLastname);
             Controls.Add(txtFullname);
             Controls.Add(btnSI);
             Controls.Add(pbSelectImage);
             Controls.Add(lblUserID);
             Controls.Add(lblFullname);
+            Controls.Add(lbllastname);
             Controls.Add(lblmail);
-            Controls.Add(lblUsername);
-            Controls.Add(lblPwd);
-            Controls.Add(lblContact);
+            Controls.Add(lblgender);
+            Controls.Add(lblBloodgroup);
             Controls.Add(lbladdress);
             Controls.Add(lblProfPic);
             Controls.Add(btnupdate);
             Controls.Add(btnDelete);
             Controls.Add(btnClear);
             Controls.Add(btnAdd);
-            Controls.Add(dgvUsers);
-            Controls.Add(txtUserSearch);
+            Controls.Add(dgvDonors);
+            Controls.Add(txtDonorSearch);
             Controls.Add(txtSearch);
             Controls.Add(panelTop);
             FormBorderStyle = FormBorderStyle.None;
@@ -372,7 +404,7 @@
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbdonorsClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDonors).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbSelectImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -387,25 +419,28 @@
         private Button btnDelete;
         private Button btnClear;
         private Button btnAdd;
-        private DataGridView dgvUsers;
-        private TextBox txtUserSearch;
+        private DataGridView dgvDonors;
+        private TextBox txtDonorSearch;
         private Label txtSearch;
         private TextBox txtAddress;
-        private TextBox txtContact;
         private TextBox txtPassword;
-        private TextBox txtUsername;
-        private TextBox txtmail;
+        private TextBox txtEmail;
+        private TextBox txtLastname;
         private TextBox txtFullname;
         private Button btnSI;
         private PictureBox pbSelectImage;
         private Label lblUserID;
         private Label lblFullname;
+        private Label lbllastname;
         private Label lblmail;
-        private Label lblUsername;
-        private Label lblPwd;
-        private Label lblContact;
+        private Label lblgender;
+        private Label lblBloodgroup;
         private Label lbladdress;
         private Label lblProfPic;
         private TextBox txtUserID;
+        private ComboBox cmbGender;
+        private ComboBox cmbBloodGroup;
+        private Label lblDonorContact;
+        private TextBox txtDonorContact;
     }
 }

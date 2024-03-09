@@ -21,5 +21,10 @@ namespace Blood_Banks.UI
         {
             this.Close();
         }
+
+        private void lbladdress_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
