@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography.X509Certificates;
 using static System.Net.Mime.MediaTypeNames;
+using Application = System.Windows.Forms.Application;
 
 namespace Blood_Banks.UI
 {
@@ -179,12 +180,48 @@ namespace Blood_Banks.UI
                 if (open.ShowDialog() == DialogResult.OK)
                 {
                     // check if the file exists
-                    Console.WriteLine("hey");
+                    //Console.WriteLine("hey");
                     if (open.CheckFileExists)
                     {
                         // display the selected file on picture box
                         pbSelectImage.Image = new Bitmap(open.FileName);
-                        imageName = open.SafeFileName;
+                        //imageName = open.SafeFileName;
+
+                        // get he extension of the image
+
+                        string ext = Path.GetExtension(open.FileName);
+
+                        // generate random integers
+
+                        Random random = new Random();
+
+                        int RandInt = random.Next(1, 1000);
+
+                        // rename the image
+
+                        imageName = "Blood_banks" + RandInt + ext;
+
+                        // get the path of selected images
+
+                        string sourcepath = open.FileName;
+
+                        // get the path of destination folder
+
+                        string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - 26);
+
+                        //path to destination folder
+
+                        string destinationpaths = paths + "\\images\\" + imageName;
+
+                        //copy image to the destination folder
+
+                        File.Copy(sourcepath, destinationpaths);
+
+                        // display message for successful upload
+
+                        MessageBox.Show("Image successfully uploaded");
+
+
                     }
                 }
                 else
