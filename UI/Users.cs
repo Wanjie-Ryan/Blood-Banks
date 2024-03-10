@@ -184,7 +184,23 @@ namespace Blood_Banks.UI
                     {
                         // display the selected file on picture box
                         pbSelectImage.Image = new Bitmap(open.FileName);
-                        imageName = open.SafeFileName;
+                        //imageName = open.SafeFileName;
+
+                        // get he extension of the image
+
+                        string ext = Path.GetExtension(open.FileName);
+
+                        // generate random integers
+
+                        Random random = new Random();
+
+                        int RandInt = random.Next(1, 1000);
+
+                        // rename the image
+
+                        imageName = "Blood_banks" + RandInt + ext;
+
+
                     }
                 }
                 else
