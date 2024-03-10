@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography.X509Certificates;
 using static System.Net.Mime.MediaTypeNames;
+using Application = System.Windows.Forms.Application;
 
 namespace Blood_Banks.UI
 {
@@ -179,7 +180,7 @@ namespace Blood_Banks.UI
                 if (open.ShowDialog() == DialogResult.OK)
                 {
                     // check if the file exists
-                    Console.WriteLine("hey");
+                    //Console.WriteLine("hey");
                     if (open.CheckFileExists)
                     {
                         // display the selected file on picture box
@@ -199,6 +200,26 @@ namespace Blood_Banks.UI
                         // rename the image
 
                         imageName = "Blood_banks" + RandInt + ext;
+
+                        // get the path of selected images
+
+                        string sourcepath = open.FileName;
+
+                        // get the path of destination folder
+
+                        string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - 26);
+
+                        //path to destination folder
+
+                        string destinationpaths = paths + "\\images\\" + imageName;
+
+                        //copy image to the destination folder
+
+                        File.Copy(sourcepath, destinationpaths);
+
+                        // display message for successful upload
+
+                        MessageBox.Show("Image successfully uploaded");
 
 
                     }
