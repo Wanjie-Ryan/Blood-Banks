@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using System.Security.Cryptography.X509Certificates;
 using static System.Net.Mime.MediaTypeNames;
 using Application = System.Windows.Forms.Application;
+using System.IO;
 
 namespace Blood_Banks.UI
 {
@@ -28,7 +29,7 @@ namespace Blood_Banks.UI
         userBLL u = new userBLL();
         userDAL dal = new userDAL();
         //Program pg = new Program();
-        string imageName = "no-image.png";
+        string imageName = "no-image.jpg";
         private void pbusersClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -75,6 +76,11 @@ namespace Blood_Banks.UI
             txtPassword.Text = "";
             txtContact.Text = "";
             txtAddress.Text = "";
+            string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - 26);
+            string imagePath = paths + "\\images\\no-image.jpg";
+
+            // display the image in the picturebox
+            pbSelectImage.Image = new Bitmap(imagePath);
 
         }
 
@@ -90,8 +96,34 @@ namespace Blood_Banks.UI
             txtFullname.Text = dgvUsers.Rows[rowIndex].Cells[4].Value.ToString();
             txtContact.Text = dgvUsers.Rows[rowIndex].Cells[5].Value.ToString();
             txtAddress.Text = dgvUsers.Rows[rowIndex].Cells[6].Value.ToString();
-            imageName = dgvUsers.Rows[rowIndex].Cells[7].Value.ToString();
+            imageName = dgvUsers.Rows[rowIndex].Cells[8].Value.ToString();
 
+            // display the image of the selected user
+            // get the image path
+
+            string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - 26);
+
+            if(imageName != "no-image.jpg")
+            {
+                //path to destination folder
+
+                string imagePath = paths + "\\images\\" + imageName;
+
+                // display the image in the picturebox
+                pbSelectImage.Image = new Bitmap(imagePath);
+
+
+            }
+            else
+            {
+                //path to destination folder
+
+                string imagePath = paths + "\\images\\no-image.jpg" ;
+
+                // display the image in the picturebox
+                pbSelectImage.Image = new Bitmap(imagePath);
+
+            }
 
         }
 
