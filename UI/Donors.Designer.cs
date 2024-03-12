@@ -188,6 +188,7 @@
             txtEmail.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtEmail.Location = new Point(180, 403);
             txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(312, 27);
             txtEmail.TabIndex = 47;
             // 
@@ -361,6 +362,7 @@
             // 
             txtDonorContact.Font = new Font("Harrington", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtDonorContact.Location = new Point(183, 610);
+            txtDonorContact.MaxLength = 10;
             txtDonorContact.Name = "txtDonorContact";
             txtDonorContact.Size = new Size(312, 27);
             txtDonorContact.TabIndex = 55;

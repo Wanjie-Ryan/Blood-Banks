@@ -34,6 +34,18 @@ namespace Blood_Banks.UI
 
         }
 
+        public void Clear()
+        {
+            txtUserID.Text = "";
+            txtFirstname.Text = "";
+            txtLastname.Text = "";
+            txtEmail.Text = "";
+            cmbGender.Text = "";
+            cmbBloodGroup.Text = "";
+            txtDonorContact.Text = "";
+            txtAddress.Text = "";
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -58,6 +70,10 @@ namespace Blood_Banks.UI
             if (success == true)
             {
                 MessageBox.Show("Donor was added succesfully", "Insertion successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataTable dt = donordal.Select();
+                dgvDonors.DataSource = dt;
+
+                Clear();
             }
             else
             {
