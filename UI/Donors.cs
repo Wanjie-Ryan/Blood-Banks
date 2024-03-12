@@ -22,6 +22,7 @@ namespace Blood_Banks.UI
         donorsBLL d = new donorsBLL();
         donorDAL donordal = new donorDAL();
         string imageName = "no-image.png";
+        int added_by = 1;
 
         private void pbdonorsClose_Click(object sender, EventArgs e)
         {
@@ -46,6 +47,20 @@ namespace Blood_Banks.UI
             d.gender = cmbGender.Text;
             d.blood_group = cmbBloodGroup.Text;
             d.added_date = DateTime.Now;
+            d.added_by = added_by;
+
+            // adding values from the ui to the db
+
+            bool success = donordal.Insert(d);
+
+            if (success == true)
+            {
+                MessageBox.Show("Donor was added succesfully", "Insertion successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Donor failed to be add", "Insertion failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
 
 
