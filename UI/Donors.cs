@@ -184,7 +184,7 @@ namespace Blood_Banks.UI
 
             bool success = donordal.Delete(d);
 
-            if(success == true)
+            if (success == true)
             {
                 MessageBox.Show("Donor deleted successfully", "Delete Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DataTable dt = donordal.Select();
@@ -195,6 +195,11 @@ namespace Blood_Banks.UI
             {
                 MessageBox.Show("Failed to delete", "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnSI_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

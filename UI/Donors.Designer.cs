@@ -222,6 +222,7 @@
             btnSI.TabIndex = 43;
             btnSI.Text = "Select image";
             btnSI.UseVisualStyleBackColor = true;
+            btnSI.Click += btnSI_Click;
             // 
             // pbSelectImage
             // 
