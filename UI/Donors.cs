@@ -199,7 +199,42 @@ namespace Blood_Banks.UI
 
         private void btnSI_Click(object sender, EventArgs e)
         {
+            OpenFileDialog open = new OpenFileDialog();
 
+            try
+            {
+                if(open.ShowDialog() == DialogResult.OK)
+                {
+                    if (open.CheckFileExists)
+                    {
+                        pbSelectImage.Image = new Bitmap(open.FileName);
+
+                        string ext = Path.GetExtension(open.FileName);
+
+                        Random random = new Random();
+
+                        int RandInt = random.Next(1, 1000);
+
+                        imageName = "Donor_" + RandInt + ext;
+
+                        string sourcepath = open.FileName;
+
+                        string path = Application.StartupPath.Substring(0, Application.StartupPath.Length - 26);
+
+                        string destinationpath = path + "\\images\\" + imageName;
+
+                        File.Copy(sourcepath, destinationpath);
+
+                        MessageBox.Show("Image uploaded successfully", "Image Uploaded", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
