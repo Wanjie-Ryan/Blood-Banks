@@ -172,9 +172,28 @@ namespace Blood_Banks.UI
             }
             else
             {
-                MessageBox.Show("Failed to update", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);   
+                MessageBox.Show("Failed to update", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DataTable dt = donordal.Select();
                 dgvDonors.DataSource = dt;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            d.donor_id = int.Parse(txtUserID.Text);
+
+            bool success = donordal.Delete(d);
+
+            if(success == true)
+            {
+                MessageBox.Show("Donor deleted successfully", "Delete Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataTable dt = donordal.Select();
+                dgvDonors.DataSource = dt;
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete", "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
