@@ -156,6 +156,7 @@
             dgvDonors.RowHeadersWidth = 51;
             dgvDonors.Size = new Size(463, 269);
             dgvDonors.TabIndex = 29;
+            dgvDonors.RowHeaderMouseClick += dgvDonors_RowHeaderMouseClick;
             // 
             // txtDonorSearch
             // 
@@ -405,6 +406,7 @@
             Name = "Donors";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Donors";
+            Load += Donors_Load;
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbdonorsClose).EndInit();

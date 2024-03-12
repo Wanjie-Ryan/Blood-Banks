@@ -95,5 +95,17 @@ namespace Blood_Banks.UI
         {
             Clear();
         }
+
+        private void Donors_Load(object sender, EventArgs e)
+        {
+            // display donors in the dgv
+            DataTable dt = donordal.Select();
+            dgvDonors.DataSource = dt;
+        }
+
+        private void dgvDonors_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
     }
 }
