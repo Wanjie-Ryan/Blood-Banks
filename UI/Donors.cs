@@ -105,7 +105,44 @@ namespace Blood_Banks.UI
 
         private void dgvDonors_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            int rowIndex = e.RowIndex;
+            txtUserID.Text = dgvDonors.Rows[rowIndex].Cells[0].Value.ToString();
+            txtFirstname.Text = dgvDonors.Rows[rowIndex].Cells[1].Value.ToString();
+            txtLastname.Text = dgvDonors.Rows[rowIndex].Cells[2].Value.ToString();
+            txtEmail.Text = dgvDonors.Rows[rowIndex].Cells[3].Value.ToString();
+            txtDonorContact.Text = dgvDonors.Rows[rowIndex].Cells[4].Value.ToString();
+            cmbGender.Text = dgvDonors.Rows[rowIndex].Cells[5].Value.ToString();
+            txtAddress.Text = dgvDonors.Rows[rowIndex].Cells[6].Value.ToString();
+            cmbBloodGroup.Text = dgvDonors.Rows[rowIndex].Cells[7].Value.ToString();
 
+            imageName = dgvDonors.Rows[rowIndex].Cells[9].Value.ToString();
+
+
+            // display the image in the picturebox
+
+            string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - 26);
+
+            if (imageName != "no-image.jpg")
+            {
+                //path to destination folder
+
+                string imagePath = paths + "\\images\\" + imageName;
+
+                // display the image in the picturebox
+                pbSelectImage.Image = new Bitmap(imagePath);
+
+
+            }
+            else
+            {
+                //path to destination folder
+
+                string imagePath = paths + "\\images\\no-image.jpg";
+
+                // display the image in the picturebox
+                pbSelectImage.Image = new Bitmap(imagePath);
+
+            }
         }
     }
 }
