@@ -144,5 +144,38 @@ namespace Blood_Banks.UI
 
             }
         }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            d.donor_id = int.Parse(txtUserID.Text);
+            d.first_name = txtFirstname.Text;
+            d.last_name = txtLastname.Text;
+            d.email = txtEmail.Text;
+            d.contact = txtDonorContact.Text;
+            d.gender = cmbGender.Text;
+            d.address = txtAddress.Text;
+            d.blood_group = cmbBloodGroup.Text;
+            d.added_date = DateTime.Now;
+            d.added_by = added_by;
+            d.image_name = imageName;
+
+            bool success = false;
+
+            success = donordal.Update(d);
+
+            if (success == true)
+            {
+                MessageBox.Show("Updated Successfully", "Update Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataTable dt = donordal.Select();
+                dgvDonors.DataSource = dt;
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);   
+                DataTable dt = donordal.Select();
+                dgvDonors.DataSource = dt;
+            }
+        }
     }
 }

@@ -100,7 +100,7 @@ namespace Blood_Banks.DAL
                 {
                     string sql = "UPDATE donors SET first_name =@first_name, last_name =@last_name, email=@email,contact=@contact, gender=@gender, address=@address, blood_group= @blood_group, image_name=@image_name, added_by=@added_by WHERE donor_id=@donor_id";
 
-                    MySqlCommand cmd = new MySqlCommand();
+                    MySqlCommand cmd = new MySqlCommand(sql,conn);
 
                     cmd.Parameters.AddWithValue("@donor_id", b.donor_id);
                     cmd.Parameters.AddWithValue("@first_name", b.first_name);
@@ -112,6 +112,8 @@ namespace Blood_Banks.DAL
                     cmd.Parameters.AddWithValue("@blood_group", b.blood_group);
                     cmd.Parameters.AddWithValue("@image_name", b.image_name);
                     cmd.Parameters.AddWithValue("@added_by", b.added_by);
+
+                    conn.Open();
 
                     int rows = cmd.ExecuteNonQuery();
 
