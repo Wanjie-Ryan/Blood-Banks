@@ -251,7 +251,8 @@ namespace Blood_Banks.UI
 
                         // display message for successful upload
 
-                        MessageBox.Show("Image successfully uploaded");
+                        MessageBox.Show("Image uploaded successfully", "Image Uploaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
 
                     }
