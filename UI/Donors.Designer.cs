@@ -167,6 +167,7 @@
             txtDonorSearch.Name = "txtDonorSearch";
             txtDonorSearch.Size = new Size(342, 27);
             txtDonorSearch.TabIndex = 28;
+            txtDonorSearch.TextChanged += txtDonorSearch_TextChanged;
             // 
             // txtSearch
             // 

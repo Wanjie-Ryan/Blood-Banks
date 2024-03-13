@@ -189,7 +189,7 @@ namespace Blood_Banks.DAL
                 {
                     string sql = "SELECT * FROM donors WHERE first_name LIKE '%" +keyword+ "%' OR last_name LIKE '%" +keyword+ "%' OR email LIKE '%" +keyword+ "%' OR gender LIKE '%" +keyword+"%' OR blood_group LIKE '%" +keyword+ "%'  ";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     conn.Open();
 
                     adapter.Fill(dt);

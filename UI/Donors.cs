@@ -203,7 +203,7 @@ namespace Blood_Banks.UI
 
             try
             {
-                if(open.ShowDialog() == DialogResult.OK)
+                if (open.ShowDialog() == DialogResult.OK)
                 {
                     if (open.CheckFileExists)
                     {
@@ -225,15 +225,31 @@ namespace Blood_Banks.UI
 
                         File.Copy(sourcepath, destinationpath);
 
-                        MessageBox.Show("Image uploaded successfully", "Image Uploaded", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                        MessageBox.Show("Image uploaded successfully", "Image Uploaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtDonorSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtDonorSearch.Text;
+
+            if( keyword != null)
+            {
+                DataTable dt = donordal.Search(keyword);
+                dgvDonors.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = donordal.Select();
+                dgvDonors.DataSource = dt;
             }
         }
     }
