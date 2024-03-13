@@ -32,10 +32,11 @@ namespace Blood_Banks.UI
             {
                 MessageBox.Show("User Login successful", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
             }
             else
             {
-
+                MessageBox.Show("User Login Failed", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
