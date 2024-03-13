@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blood_Banks.BLL;
+using Blood_Banks.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +19,25 @@ namespace Blood_Banks.UI
             InitializeComponent();
         }
 
+        loginDAL login = new loginDAL();
+        loginBLL lb = new loginBLL();
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            lb.username = txtUsername.Text;
+            lb.password = txtPassword.Text;
+
+            bool success = login.LoginCheck(lb);
+
+            if(success == true)
+            {
+                MessageBox.Show("User Login successful", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+
+            }
+
 
         }
 
