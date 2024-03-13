@@ -94,12 +94,13 @@
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(97, 21);
             lblPassword.TabIndex = 5;
-            lblPassword.Text = "Username";
+            lblPassword.Text = "Password";
             // 
             // txtPassword
             // 
             txtPassword.Location = new Point(620, 232);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(217, 29);
             txtPassword.TabIndex = 6;
             // 
