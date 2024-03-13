@@ -1,3 +1,4 @@
+using Blood_Banks.UI;
 using System;
 using System.Windows.Forms; // Add this namespace for Application class
 
@@ -25,7 +26,9 @@ namespace Blood_Banks
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             // Start the application by running the main form
-            Application.Run(new HomeForm());   
+            Application.Run(new Login());
+            //Application.Run(new HomeForm());   
+
         }
     }
 }

@@ -33,7 +33,13 @@
             lblLoginTitle = new Label();
             lblTitleLogin = new Label();
             lblUsername = new Label();
+            txtUsername = new TextBox();
+            lblPassword = new Label();
+            txtPassword = new TextBox();
+            btnLogin = new Button();
+            pbCloseLogin = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbLogin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbCloseLogin).BeginInit();
             SuspendLayout();
             // 
             // pbLogin
@@ -74,12 +80,65 @@
             lblUsername.TabIndex = 3;
             lblUsername.Text = "Username";
             // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(620, 139);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(217, 29);
+            txtUsername.TabIndex = 4;
+            // 
+            // lblPassword
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Location = new Point(620, 193);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(97, 21);
+            lblPassword.TabIndex = 5;
+            lblPassword.Text = "Username";
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(620, 232);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(217, 29);
+            txtPassword.TabIndex = 6;
+            // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.DarkGreen;
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.Font = new Font("Harrington", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.Location = new Point(638, 326);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(174, 66);
+            btnLogin.TabIndex = 7;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // pbCloseLogin
+            // 
+            pbCloseLogin.Cursor = Cursors.Hand;
+            pbCloseLogin.Image = (Image)resources.GetObject("pbCloseLogin.Image");
+            pbCloseLogin.Location = new Point(858, 12);
+            pbCloseLogin.Name = "pbCloseLogin";
+            pbCloseLogin.Size = new Size(30, 34);
+            pbCloseLogin.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbCloseLogin.TabIndex = 8;
+            pbCloseLogin.TabStop = false;
+            pbCloseLogin.Click += pbCloseLogin_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(900, 600);
+            ClientSize = new Size(900, 500);
+            Controls.Add(pbCloseLogin);
+            Controls.Add(btnLogin);
+            Controls.Add(txtPassword);
+            Controls.Add(lblPassword);
+            Controls.Add(txtUsername);
             Controls.Add(lblUsername);
             Controls.Add(lblTitleLogin);
             Controls.Add(lblLoginTitle);
@@ -91,6 +150,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pbLogin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbCloseLogin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -101,5 +161,10 @@
         private Label lblLoginTitle;
         private Label lblTitleLogin;
         private Label lblUsername;
+        private TextBox txtUsername;
+        private Label lblPassword;
+        private TextBox txtPassword;
+        private Button btnLogin;
+        private PictureBox pbCloseLogin;
     }
 }
