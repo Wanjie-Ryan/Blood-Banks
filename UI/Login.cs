@@ -32,6 +32,9 @@ namespace Blood_Banks.UI
             {
                 MessageBox.Show("User Login successful", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                HomeForm hf = new HomeForm();
+                hf.Show();
+                //this.Hide();
 
             }
             else
