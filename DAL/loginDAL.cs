@@ -21,6 +21,26 @@ namespace Blood_Banks.DAL
             {
                 try
                 {
+                    string sql = "SELECT * FROM users WHERE username =@username AND password = @password";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("@username", l.username);
+                    cmd.Parameters.AddWithValue("@password", l.password);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+
+                    adapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        isSuccess = true;
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
+
 
                 }
                 catch(Exception ex)
