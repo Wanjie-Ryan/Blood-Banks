@@ -48,6 +48,25 @@ namespace Blood_Banks
 
             DataTable dt = donor.Select();
             dgvDonors.DataSource = dt;
+
+            DateTime now = DateTime.Now;
+            string greeting;
+
+            if(now.Hour>=0 && now.Hour < 12)
+            {
+                greeting = "Good Morning";
+            }
+            else if(now.Hour>=12 && now.Hour < 16)
+            {
+                greeting = "Good Afternoon";
+            }
+            else
+            {
+                greeting = "Good Evening";
+            }
+
+            //lblmessage.Text = greeting + Login.loggedInUser;
+            lblmessage.Text = $"{greeting}, {Login.loggedInUser}";
         }
 
         public void allDonorCount()

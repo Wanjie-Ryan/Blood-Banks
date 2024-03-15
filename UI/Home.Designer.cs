@@ -72,6 +72,7 @@
             lblSearch = new Label();
             txtSearch = new TextBox();
             dgvDonors = new DataGridView();
+            lblmessage = new Label();
             menuStripTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
@@ -94,7 +95,7 @@
             menuStripTop.Location = new Point(0, 0);
             menuStripTop.Name = "menuStripTop";
             menuStripTop.Padding = new Padding(8, 10, 0, 10);
-            menuStripTop.Size = new Size(1103, 51);
+            menuStripTop.Size = new Size(1105, 51);
             menuStripTop.TabIndex = 0;
             menuStripTop.Text = "menuStrip1";
             menuStripTop.ItemClicked += menuStripTop_ItemClicked;
@@ -143,7 +144,7 @@
             panelBottom.Dock = DockStyle.Bottom;
             panelBottom.Location = new Point(0, 611);
             panelBottom.Name = "panelBottom";
-            panelBottom.Size = new Size(1103, 69);
+            panelBottom.Size = new Size(1105, 69);
             panelBottom.TabIndex = 3;
             // 
             // lblFooterTitle
@@ -547,12 +548,21 @@
             dgvDonors.Size = new Size(549, 387);
             dgvDonors.TabIndex = 13;
             // 
+            // lblmessage
+            // 
+            lblmessage.AutoSize = true;
+            lblmessage.Location = new Point(887, 73);
+            lblmessage.Name = "lblmessage";
+            lblmessage.Size = new Size(0, 24);
+            lblmessage.TabIndex = 14;
+            // 
             // HomeForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(1103, 680);
+            ClientSize = new Size(1105, 680);
+            Controls.Add(lblmessage);
             Controls.Add(dgvDonors);
             Controls.Add(txtSearch);
             Controls.Add(lblSearch);
@@ -649,5 +659,6 @@
         private Label lblSearch;
         private TextBox txtSearch;
         private DataGridView dgvDonors;
+        private Label lblmessage;
     }
 }
