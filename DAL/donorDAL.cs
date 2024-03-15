@@ -206,5 +206,31 @@ namespace Blood_Banks.DAL
 
             return dt;
         }
+
+        public string countDonors(string blood_group)
+        {
+            using(MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            {
+                // create a string variable for donor count and set its default value to 0
+
+                string donors = "0";
+
+                try
+                {
+
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                return donors;
+            }
+        }
     }
 }
