@@ -209,6 +209,8 @@ namespace Blood_Banks.DAL
 
         public string countDonors(string blood_group)
         {
+
+            // using is used to ensure that the connection is properly disposed of after its use
             using(MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
             {
                 // create a string variable for donor count and set its default value to 0
@@ -218,7 +220,20 @@ namespace Blood_Banks.DAL
                 try
                 {
 
+                    string sql = "SELECT * FROM donors WHERE blood_group = '"+blood_group+"' ";
 
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+
+                    DataTable dt = new DataTable();
+
+                    adapter.Fill(dt);
+
+                    // get the total number of donors based on the blood group
+
+                    donors = dt.Rows.Count.ToString();
+                    //counts the number of rows in the dataTable
                 }
                 catch(Exception ex)
                 {
