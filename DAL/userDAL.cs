@@ -204,5 +204,10 @@ namespace Blood_Banks.DAL
 
             return dt;
         }
+
+        public userBLL GetIDFromUsername(string username)
+        {
+
+        }
     }
 }
