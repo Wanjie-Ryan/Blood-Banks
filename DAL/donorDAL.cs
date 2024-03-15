@@ -225,6 +225,7 @@ namespace Blood_Banks.DAL
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    conn.Open();
 
                     DataTable dt = new DataTable();
 

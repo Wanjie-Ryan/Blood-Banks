@@ -207,7 +207,37 @@ namespace Blood_Banks.DAL
 
         public userBLL GetIDFromUsername(string username)
         {
+            userBLL u = new userBLL();
 
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            {
+                DataTable dt = new DataTable();
+
+                try
+                {
+                    string sql = "SELECT user_id FROM users WHERE username ='"+username+"' ";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(sql,conn);
+                    conn.Open();
+                    adapter.Fill(dt);
+                    //if there's a user based on the username, get the user_id
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        u.user_id = int.Parse(dt.Rows[0]["user_id"].ToString());
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+
+            return u;
         }
     }
 }
