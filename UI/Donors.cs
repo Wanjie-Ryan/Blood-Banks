@@ -21,6 +21,7 @@ namespace Blood_Banks.UI
 
         donorsBLL d = new donorsBLL();
         donorDAL donordal = new donorDAL();
+        userDAL user = new userDAL();
         string imageName = "no-image.png";
         int added_by = 1;
 
@@ -67,7 +68,22 @@ namespace Blood_Banks.UI
             d.gender = cmbGender.Text;
             d.blood_group = cmbBloodGroup.Text;
             d.added_date = DateTime.Now;
-            d.added_by = added_by;
+
+            // getting the ID of the logged in user
+
+            string loggedInUser = Login.loggedInUser;
+            userBLL ubll = user.GetIDFromUsername(loggedInUser);
+            if (ubll != null)
+            {
+
+            d.added_by = ubll.user_id;
+            }
+            else
+            {
+                MessageBox.Show("Cannot find reference", "Ref not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
 
             // adding values from the ui to the db
 
@@ -156,7 +172,20 @@ namespace Blood_Banks.UI
             d.address = txtAddress.Text;
             d.blood_group = cmbBloodGroup.Text;
             d.added_date = DateTime.Now;
-            d.added_by = added_by;
+
+            string loggedInUser = Login.loggedInUser;
+            userBLL ubll = user.GetIDFromUsername(loggedInUser);
+            if (ubll != null)
+            {
+            d.added_by = ubll.user_id;
+
+            }
+            else
+            {
+                MessageBox.Show("Cannot find reference", "Ref not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
             d.image_name = imageName;
 
             bool success = false;

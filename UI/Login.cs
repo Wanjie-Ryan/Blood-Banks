@@ -23,7 +23,7 @@ namespace Blood_Banks.UI
         loginBLL lb = new loginBLL();
 
         // saving the username of the logged in user
-        static string loggedInUser;
+        public static string loggedInUser;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             lb.username = txtUsername.Text;
