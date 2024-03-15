@@ -522,7 +522,7 @@
             // 
             lblSearch.AutoSize = true;
             lblSearch.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblSearch.Location = new Point(599, 122);
+            lblSearch.Location = new Point(504, 119);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(150, 27);
             lblSearch.TabIndex = 11;
@@ -532,19 +532,19 @@
             // 
             txtSearch.BorderStyle = BorderStyle.None;
             txtSearch.Font = new Font("Harrington", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(755, 122);
+            txtSearch.Location = new Point(673, 122);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(298, 28);
+            txtSearch.Size = new Size(372, 28);
             txtSearch.TabIndex = 12;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // dgvDonors
             // 
             dgvDonors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDonors.Location = new Point(599, 168);
+            dgvDonors.Location = new Point(504, 168);
             dgvDonors.Name = "dgvDonors";
             dgvDonors.RowHeadersWidth = 51;
-            dgvDonors.Size = new Size(454, 387);
+            dgvDonors.Size = new Size(549, 387);
             dgvDonors.TabIndex = 13;
             // 
             // HomeForm

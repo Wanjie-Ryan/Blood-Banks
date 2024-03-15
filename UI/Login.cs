@@ -21,6 +21,9 @@ namespace Blood_Banks.UI
 
         loginDAL login = new loginDAL();
         loginBLL lb = new loginBLL();
+
+        // saving the username of the logged in user
+        static string loggedInUser;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             lb.username = txtUsername.Text;
@@ -31,6 +34,7 @@ namespace Blood_Banks.UI
             if(success == true)
             {
                 MessageBox.Show("User Login successful", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loggedInUser = lb.username;
 
                 HomeForm hf = new HomeForm();
                 hf.Show();
