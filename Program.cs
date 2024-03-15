@@ -26,8 +26,9 @@ namespace Blood_Banks
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             // Start the application by running the main form
-            Application.Run(new Login());
+            //Application.Run(new Login());
             //Application.Run(new HomeForm());   
+            Application.Run(new Splash());
 
         }
     }
