@@ -574,6 +574,7 @@
             Name = "HomeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
+            Load += HomeForm_Load;
             menuStripTop.ResumeLayout(false);
             menuStripTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

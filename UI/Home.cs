@@ -1,3 +1,4 @@
+using Blood_Banks.DAL;
 using Blood_Banks.UI;
 
 namespace Blood_Banks
@@ -9,6 +10,7 @@ namespace Blood_Banks
             InitializeComponent();
         }
 
+        donorDAL donor = new donorDAL();
         private void menuStripTop_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -35,6 +37,16 @@ namespace Blood_Banks
         {
             Donors donorsForm = new Donors();
             donorsForm.Show();
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+            //load all the blood donors count when form is loaded
+        }
+
+        public void allDonorCount()
+        {
+            // get the donor count from the DB and set it to the respective label
         }
     }
 }
