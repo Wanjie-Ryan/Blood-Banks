@@ -574,6 +574,7 @@
             Name = "HomeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
+            Activated += HomeForm_Activated;
             Load += HomeForm_Load;
             menuStripTop.ResumeLayout(false);
             menuStripTop.PerformLayout();

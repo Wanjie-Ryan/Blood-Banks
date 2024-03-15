@@ -42,11 +42,27 @@ namespace Blood_Banks
         private void HomeForm_Load(object sender, EventArgs e)
         {
             //load all the blood donors count when form is loaded
+            //call the alldonorcount method
+            allDonorCount();
         }
 
         public void allDonorCount()
         {
             // get the donor count from the DB and set it to the respective label
+            lblOPosCount.Text = donor.countDonors("O+");
+            lblOnegCount.Text = donor.countDonors("O-");
+            lblAposCount.Text = donor.countDonors("A+");
+            lblAnegCount.Text = donor.countDonors("A-");
+            lblBPosCount.Text = donor.countDonors("B+");
+            lblBNegCount.Text = donor.countDonors("B-");
+            lblABposCount.Text = donor.countDonors("AB+");
+            lblABNegCount.Text = donor.countDonors("AB-");
+
+        }
+
+        private void HomeForm_Activated(object sender, EventArgs e)
+        {
+            allDonorCount();
         }
     }
 }
