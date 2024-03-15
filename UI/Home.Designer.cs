@@ -536,6 +536,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(298, 28);
             txtSearch.TabIndex = 12;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // dgvDonors
             // 

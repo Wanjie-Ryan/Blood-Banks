@@ -1,5 +1,6 @@
 using Blood_Banks.DAL;
 using Blood_Banks.UI;
+using System.Data;
 
 namespace Blood_Banks
 {
@@ -44,6 +45,9 @@ namespace Blood_Banks
             //load all the blood donors count when form is loaded
             //call the alldonorcount method
             allDonorCount();
+
+            DataTable dt = donor.Select();
+            dgvDonors.DataSource = dt;
         }
 
         public void allDonorCount()
@@ -63,6 +67,22 @@ namespace Blood_Banks
         private void HomeForm_Activated(object sender, EventArgs e)
         {
             allDonorCount();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text;
+
+            if(keyword != null)
+            {
+                DataTable dt = donor.Search(keyword);
+                dgvDonors.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = donor.Select();
+                dgvDonors.DataSource = dt;
+            }
         }
     }
 }
